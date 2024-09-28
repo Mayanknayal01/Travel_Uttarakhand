@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import './Banner.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { banner_Slider } from '../../assets/assets.js';
 
 const BannerCarousel = () => {
     const settings = {
@@ -21,21 +22,21 @@ const BannerCarousel = () => {
             <div>
                 <img
                     className="carousel-image"
-                    src="/assets/images/trek.jpg"
+                    src={banner_Slider.trek}
                     alt="First slide"
                 />
             </div>
             <div>
                 <img
                     className="carousel-image"
-                    src="/assets/images/homestays.jpg"
+                    src={banner_Slider.homestays}
                     alt="Second slide"
                 />
             </div>
             <div>
                 <img
                     className="carousel-image"
-                    src="/assets/images/travel.jpg"
+                    src={banner_Slider.travel}
                     alt="Third slide"
                 />
             </div>
