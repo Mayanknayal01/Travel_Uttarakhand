@@ -1,0 +1,82 @@
+.footer {
+    background: 
+      url('/public/assets/images/123.png') no-repeat bottom, /* Image at bottom, no repeat */
+      linear-gradient(to right, rgb(0, 128, 255), rgb(0, 77, 153)); /* Gradient from sky blue to dark blue */
+    
+    background-size: auto; /* Ensure the image fits well */
+    background-position: top; /* Keep the image at the bottom of the footer */
+    padding: 30px;
+    color: white;
+    min-height: 300px; /* Add height to ensure the image is visible */
+}
+
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-left, .footer-middle, .footer-right {
+    flex: 1;
+}
+
+.footer-left h2 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+}
+
+.footer-left p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.social-icons i {
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.dropdown {
+    margin-top: 20px;
+}
+
+.dropdown-button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+.footer-middle ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-middle ul li {
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.address h3 {
+    margin: 10px 0;
+}
+
+.address p {
+    margin: 5px 0;
+}
+
+.footer-right {
+    max-width: 300px;
+}
+
+.footer a, .footer a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
