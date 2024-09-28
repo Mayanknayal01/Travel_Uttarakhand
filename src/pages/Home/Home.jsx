@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Sliders from "../../components/Sliders/Sliders.jsx";
 import SliderDist from "../../components/Sliders/SliderDist.jsx";
+import Header from "../../components/common/Header/Header.jsx";
+import Banner from "../../components/Banner/Banner.jsx";
 import {
   track_items,
   about_us_img,
@@ -61,6 +63,8 @@ function Home() {
 
   return (
     <div className="home">
+      <Header />
+      <Banner />
       <section className="carousel">
         <h1>Explore Destinations</h1>
         <Slider {...settings}>

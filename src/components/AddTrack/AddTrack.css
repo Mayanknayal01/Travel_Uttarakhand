@@ -1,11 +1,15 @@
 /* AddTrack.css */
-.addtrack {
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.addtrackone, .addtracktwo {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color:whitesmoke ;
   padding: 20px;
+  margin: 50px;
 }
 
 .addtrack-container {
@@ -35,7 +39,7 @@
 .addtrack-title h2 {
   font-size: 28px;
   color: #333;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif; 
 }
 
 .addtrack-title .cross {
