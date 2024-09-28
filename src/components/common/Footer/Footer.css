@@ -1,17 +1,3 @@
-.footer {
-    background: 
-      url('/public/assets/images/123.png') no-repeat bottom, /* Image at bottom, no repeat */
-      linear-gradient(to right, rgb(0, 128, 255), rgb(0, 77, 153)); /* Gradient from sky blue to dark blue */
-    
-    background-size: auto; /* Ensure the image fits well */
-    background-position: top; /* Keep the image at the bottom of the footer */
-    padding: 30px;
-    color: white;
-    min-height: 300px; /* Add height to ensure the image is visible */
-}
-
-
-
 .footer-container {
     display: flex;
     justify-content: space-between;
@@ -22,14 +8,15 @@
     flex: 1;
 }
 
-.footer-left h2 {
+.footer-left h2, .footer-right h3 {
     font-family: Arial, sans-serif;
     font-size: 24px;
+    font-weight: 600;
 }
 
 .footer-left p {
     font-size: 14px;
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 .social-icons i {
@@ -48,8 +35,12 @@
     border: 1px solid white;
     color: white;
     cursor: pointer;
+    border-radius: 5px;
 }
 
+.footer-middle {
+    margin-left: 3rem;
+}
 .footer-middle ul {
     list-style-type: none;
     padding: 0;
@@ -70,6 +61,14 @@
 
 .footer-right {
     max-width: 300px;
+}
+
+
+.footer-right h3 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
 }
 
 .footer a, .footer a:visited {

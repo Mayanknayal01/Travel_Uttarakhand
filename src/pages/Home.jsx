@@ -4,7 +4,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Sliders from "../components/Sliders/Sliders";
-import { background_img, track_items } from "../assets/assets.js";
+import SliderDist from "../components/Sliders/SliderDist.jsx";
+import { track_items, about_us_img, services_img, dist_slider } from "../assets/assets.js";
 
 
 function Home() {
@@ -59,65 +60,36 @@ function Home() {
       <section className="carousel">
         <h1>Explore Destinations</h1>
         <Slider {...settings}>
-          <div>
-            <img src={background_img.uttkashi} alt="nainital" />
-            <p className="image-caption">Nainital</p>
-          </div>
-          <div>
-            <img src="./assets/images/almora.jpg" alt="almora" />
-            <p className="image-caption">Almora</p>
-          </div>
-          <div>
-            <img src="assets/images/bageshwar.jpg" alt="bageshwar" />
-            <p className="image-caption">Bageshwar</p>
-          </div>
-          <div>
-            <img src="assets/images/chamoli.jpg" alt="chamoli" />
-            <p className="image-caption">Chamoli</p>
-          </div>
-          <div>
-            <img src="assets/images/champawat.jpg" alt="champawat" />
-            <p className="image-caption">Champawat</p>
-          </div>
-          <div>
-            <img src="assets/images/dehradun.jpg" alt="dehradun" />
-            <p className="image-caption">Dehradun</p>
-          </div>
-          <div>
-            <img src="assets/images/haridwar.jpg" alt="haridwar" />
-            <p className="image-caption">Haridwar</p>
-          </div>
-          <div>
-            <img src="assets/images/pauri.jpg" alt="pauri garhwal" />
-            <p className="image-caption">Pauri Garhwal</p>
-          </div>
-          <div>
-            <img src="assets/images/pithoragarh.jpg" alt="pithoragarh" />
-            <p className="image-caption">Pithoragarh</p>
-          </div>
-          <div>
-            <img src="assets/images/rudraprayag.jpg" alt="rudraprayag" />
-            <p className="image-caption">Rudraprayag</p>
-          </div>
-          <div>
-            <img src="assets/images/tehri.jpg" alt="tehri garhwal" />
-            <p className="image-caption">Tehri Garhwal</p>
-          </div>
-          <div>
-            <img
-              src="assets/images/udhamsinghnagar.jpg"
-              alt="udham singh nagar"
-            />
-            <p className="image-caption">Udham Singh Nagar</p>
-          </div>
-          <div>
-            <img src="assets/images/uttarkashi.jpg" alt="uttarkashi" />
-            <p className="image-caption">Uttarkashi</p>
-          </div>
+          {dist_slider.map((item, index) => {
+            return (
+              <SliderDist 
+                key={index}
+                id={item.id}
+                dist_img={item.dist_img}
+                name={item.name}
+              />
+            );
+          })}
         </Slider>
       </section>
 
-      <section className="intro">
+      <section className="intro" style={{
+      position: 'relative',
+      zIndex: 0,
+    }}>
+    <div className="background" style={{
+          backgroundImage: `url(${about_us_img.trekbg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.5,
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: -1, // Send the background behind content
+        }}>
+        </div>
         <h2>
           Welcome to <span className="highlight_name">Travel_Uttarakhand</span>
         </h2>
@@ -136,17 +108,17 @@ function Home() {
           <div className="card-two">
             <img
               className="about-img1"
-              src="assets/images/beauty1.jpg"
+              src={about_us_img.beauty1}
               alt="beauty-one"
             />
             <img
               className="about-img2"
-              src="assets/images/beauty2.jpg"
+              src={about_us_img.beauty2}
               alt="beauty-one"
             />
             <img
               className="about-img3"
-              src="assets/images/beauty3.jpg"
+              src={about_us_img.beauty3}
               alt="beauty-one"
             />
           </div>
@@ -157,7 +129,7 @@ function Home() {
         <h3>Our Services</h3>
         <div className="service-cards">
           <div className="service-card">
-            <img src="assets/images/trekking.jpg" alt="Trekking" />
+            <img src={services_img.trekking} alt="Trekking" />
             <h4>Trekking</h4>
             <p>
               Trekking in Uttarakhand offers an exhilarating experience through
@@ -167,7 +139,7 @@ function Home() {
             <button>Explore more</button>
           </div>
           <div className="service-card">
-            <img src="assets/images/homestays1.jpg" alt="Homestays" />
+            <img src={services_img.homestays1} alt="Homestays" />
             <h4>Homestays</h4>
             <p>
               Experience the charm of Uttarakhand with our cozy homestays,
@@ -177,7 +149,7 @@ function Home() {
             <button>Explore more</button>
           </div>
           <div className="service-card">
-            <img src="assets/images/travelpackage.jpg" alt="Travel Packages" />
+            <img src={services_img.travelpackage} alt="Travel Packages" />
             <h4>Travel Packages</h4>
             <p>
               Experience the best of Uttarakhand with our customized travel
@@ -194,7 +166,6 @@ function Home() {
         <h3>Featured Treks</h3>
         <div className="trek-cards">
           <Slider {...settings2}>
-            {/* one */}
             {track_items.map((item, index) => {
               return (
                 <Sliders
