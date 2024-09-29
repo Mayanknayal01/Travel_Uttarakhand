@@ -7,6 +7,7 @@ import Login from "./pages/Login/Login";
 import AdminDashboard from "./pages/Admin Dashboard/Dashboard";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Treks from "./pages/Treks&Homestays/Treks";
+import Homestays from "./pages/Treks&Homestays/Homestays";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/treks" element={<Treks />} />
+        <Route path="/homestays" element={<Homestays />} />
       </Routes>
       <Footer />
     </>

@@ -1,15 +1,16 @@
 import React from 'react';
 import './Treks.css';
 import Sliders from "../../components/Sliders/Sliders.jsx";
-import AdminHeader from "../../components/common/Header/AdminHeader";
+import Header from "../../components/common/Header/Header.jsx";
 import { track_items } from '../../assets/assets';
+import SecondBanner from '../../components/Banner/secondBanner.jsx';
 
 const Treks = () => {
     return (
         <>
-            <AdminHeader />
+            <Header />
+            <SecondBanner />
             <section className='Treks-section'>
-                <h1>All Treks</h1>
                 <div className="allCards">
                     {track_items.map((item, index) => {
                         return (

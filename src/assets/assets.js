@@ -35,6 +35,10 @@ import homestays1 from "./images/homestays1.jpg";
 import travelpackage from "./images/travelpackage.jpg";
 // footer images
 import footer from "./images/footer.png";
+// second banner images
+import treks from "./images/trek-page-bg.jpg";
+import homestaysbg from "./images/homestays-page-bg.jpg";
+import contact from "./images/contact-page-bg.jpg";
 
 
 export const dist_slider = [
@@ -192,4 +196,10 @@ export const services_img = {
 
 export const footer_img = {
   footer
+}
+
+export const second_banner_img = {
+  treks, 
+  homestaysbg,
+  contact
 }
