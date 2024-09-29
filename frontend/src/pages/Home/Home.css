@@ -1,0 +1,193 @@
+.home {
+    font-family: Arial, sans-serif;
+
+}
+
+/* carousel css */
+
+.carousel {
+    padding: 4rem 8rem 8rem 8rem;
+}
+
+.carousel h1 {
+    text-align: center;
+    padding-bottom: 2rem;
+    font-size: 2.5rem;
+    color: black;
+    font-weight: 800;
+}
+
+.carousel img {
+    width: 130px;
+    height: 120px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+/* intro section css */
+
+.intro {
+    position: relative; 
+    text-align: center;
+    margin-bottom: 40px;
+    overflow: hidden; 
+}
+
+.intro h2 {
+    font-size: 2.5rem;
+    color: black;
+    font-weight: 800;
+    margin-top: 70px;
+    position: relative; /* Ensure text is above the background */
+    z-index: 1; /* Ensure it's on top */
+}
+.highlight_name {
+    color: rgb(0, 128, 255); 
+}
+
+.outer {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr ;
+    height: 48rem;
+    padding: 50px;
+}
+
+.card-one {
+    display: flex;
+    align-items: center;
+}
+
+.card-two {
+    position: relative;
+}
+
+.card-two img {
+    position: absolute;
+    width: 275px;
+    height: auto;
+    transition: transform 0.7s ease;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.about-img1 {
+    left: 7%; /* Position this image on the right */
+}
+.about-img2 {
+    left: 38.5%;
+    top: 20%; /* Position this image on the left */
+}
+.about-img3 {
+    bottom: 10%; /* Position this image on the left */
+    right: 0;
+}
+
+/* Optional hover effect */
+.card-two img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+
+.intro p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: black;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative; /* Ensure text is above the background */
+    z-index: 1; /* Ensure it's on top */
+}
+
+
+/* services  & trek-cards css */
+
+.services {
+    margin: 60px 0;
+}
+
+.services h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: black;
+    font-weight: 800;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 7px 10px 20px 1px;
+    margin: 10px;
+    text-align: center;
+    width: 27%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.service-card img {
+    width: 100%; /* Make images responsive */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 200px;
+}
+
+.service-card button {
+    border-radius: 5px;
+    background-color: rgb(9, 225, 37);
+    border: none;
+    cursor: pointer;
+    box-shadow: none;
+    margin: 20px;
+    height: 2.5rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card button:hover {
+    background-color: rgb(0, 128, 255);  
+}
+
+.service-card h4 {
+    margin: 10px 0;
+    color: black;
+    font-weight: 600;
+}
+
+.service-card p {
+    padding: 0 20px;
+}
+
+
+
+
+/* featured cards */
+
+
+
+.featured-treks {
+    margin: 80px 0;
+}
+
+.featured-treks h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: black;
+    font-weight: 800;
+}
+
+.trek-cards {
+    width: 80%;
+    margin: auto;
+}
+
+
+
+
+

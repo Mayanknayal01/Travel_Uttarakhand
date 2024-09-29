@@ -1,0 +1,65 @@
+.banner {
+    position: relative; /* Allow absolute positioning of content */
+    height: 100vh; /* Set height to cover the viewport */
+    overflow: hidden; /* Hide any overflow */
+}
+
+.banner-image {
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Start from the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Cover the full width */
+    height: 100%; /* Cover the full height */
+    object-fit: cover; /* Maintain aspect ratio */
+    z-index: 0; /* Ensure it's behind the content */
+}
+
+.banner-content {
+    position: absolute; /* Keep it absolute */
+    top: 20%; /* Adjust the position */
+    left: 50%;
+    transform: translateX(-50%); /* Only translate horizontally */
+    color: black; /* Ensure content is white for visibility */
+    text-align: center;
+    z-index: 1; /* Ensures the content is above the image */
+}
+
+
+.banner-content h1 {
+    font-size: 2.5rem; /* Adjust size as needed */
+    margin: 12px;
+    font-weight: 800;
+}
+
+.highlight {
+    color: rgb(9, 225, 37); /* Green highlight */
+}
+
+.highlight2 {
+    color: white; /* Orange highlight */
+}
+
+.banner-content p {
+    font-size: 1.3rem; /* Adjust size as needed */
+}
+
+.carousel-container {
+    position: absolute; /* Make the carousel position absolute */
+    bottom: 0; /* Adjust this value as needed to position it above the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center it horizontally */
+    width: 76%; /* Set width as needed */
+    z-index: 1; /* Ensure the carousel is above the image */
+}
+
+
+.carousel-image {
+    width: 300px; /* Adjust to desired width */
+    height: 300px; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure images fit properly */
+    border-radius: 10px;
+
+}
+
+
+

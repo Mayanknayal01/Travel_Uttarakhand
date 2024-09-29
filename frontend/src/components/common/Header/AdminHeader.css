@@ -1,0 +1,71 @@
+.admin_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items at the start (top) */
+    padding: 40px; /* Adjust as needed */
+    top: 0; /* Position it at the top */
+    width: 100%; /* Full width */
+    z-index: 10; /* Ensure it stays above the banner */
+    background-color: rgb(0, 128, 255);
+}
+
+
+
+.admin_logo {
+    flex: 1; /* Take available space on the left */
+    font-size: 25px;
+    color: black;
+}
+
+.admin_logo a {
+    color: black !important; /* Force it to be white */
+    text-decoration: none; /* Remove underline */
+}
+
+
+.admin_nav {
+    flex: 1; /* Take available space in the middle */
+    display: flex;
+    justify-content: center; /* Center the menu */
+}
+
+.admin_nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.admin_nav ul li {
+    margin: 0 15px; /* Space between menu items */
+    font-size: 20px;
+}
+
+.admin_nav ul li a {
+    text-decoration: none;
+    color: black; /* Change to white for visibility */
+    padding: 10px;
+}
+
+.admin_nav ul li a:hover {
+    color: white; /* Change color on hover */
+}
+
+.admin-social-media {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Align icons vertically */
+    gap: 35px; /* Space between icons */    
+}
+
+.admin-social-media a {
+    text-decoration: none;
+    color: black; /* Icon color */
+}
+
+.admin-social-media a:hover {
+    color: white; /* Change color on hover */
+}
+
+

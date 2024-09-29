@@ -1,0 +1,76 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items at the start (top) */
+    padding: 40px; /* Adjust as needed */
+    background: transparent; /* Fully transparent */
+    position: absolute; /* Allow overlap */
+    top: 0; /* Position it at the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    z-index: 10; /* Ensure it stays above the banner */
+}
+
+
+
+.logo {
+    flex: 1; /* Take available space on the left */
+    font-size: 25px;
+    color: white;
+}
+
+.logo a {
+    color: white !important; /* Force it to be white */
+    text-decoration: none; /* Remove underline */
+}
+
+
+.nav {
+    flex: 1; /* Take available space in the middle */
+    display: flex;
+    justify-content: center; /* Center the menu */
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul li {
+    margin: 0 12px; /* Space between menu items */
+    font-size: 20px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white; /* Change to white for visibility */
+    padding: 8px;
+}
+
+.nav ul li a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+.social-media {
+    flex: 1;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center; /* Align icons vertically */
+    gap: 35px; /* Space between icons */    
+}
+
+.social-media a {
+    text-decoration: none;
+    color: white; /* Icon color */
+}
+
+.social-media a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Ensure body background is set to avoid white */
+body {
+    background-color: transparent; /* Set this to the desired background */
+}
