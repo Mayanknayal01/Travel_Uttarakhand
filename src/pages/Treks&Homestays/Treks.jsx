@@ -1,6 +1,6 @@
 import React from 'react';
 import './Treks.css';
-import Sliders from "../../components/Sliders/Sliders.jsx";
+import Sliders from "../../components/data_trek_homestays/treks_data.jsx";
 import Header from "../../components/common/Header/Header.jsx";
 import { track_items } from '../../assets/assets';
 import SecondBanner from '../../components/Banner/secondBanner.jsx';

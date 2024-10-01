@@ -3,10 +3,11 @@ import "./Home.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Sliders from "../../components/Sliders/Sliders.jsx";
+import Sliders from "../../components/data_trek_homestays/treks_data.jsx";
 import SliderDist from "../../components/Sliders/SliderDist.jsx";
 import Header from "../../components/common/Header/Header.jsx";
 import Banner from "../../components/Banner/Banner.jsx";
+import { useNavigate } from "react-router-dom";
 import {
   track_items,
   about_us_img,
@@ -15,6 +16,10 @@ import {
 } from "../../assets/assets.js";
 
 function Home() {
+  const navigate = useNavigate();
+  const handleRedirect = (path) => {
+    navigate(path);
+  };
   const settings2 = {
     dots: true,
     infinite: true,
@@ -149,7 +154,7 @@ function Home() {
               pristine landscapes, majestic peaks, and verdant forests. Explore
               hidden trails and connect with nature in this Himalayan paradise.
             </p>
-            <button>Explore more</button>
+            <button onClick={() => handleRedirect("/treks")}>Explore more</button>
           </div>
           <div className="service-card">
             <img src={services_img.homestays1} alt="Homestays" />
@@ -159,7 +164,7 @@ function Home() {
               nestled in serene landscapes. Enjoy authentic hospitality and a
               peaceful retreat amidst nature's beauty.
             </p>
-            <button>Explore more</button>
+            <button onClick={() => handleRedirect("./homestays")}>Explore more</button>
           </div>
           <div className="service-card">
             <img src={services_img.travelpackage} alt="Travel Packages" />
@@ -170,7 +175,7 @@ function Home() {
               hill stations to adventurous treks, we offer unforgettable
               journeys through the state's natural wonders.
             </p>
-            <button>Explore more</button>
+            <button onClick={() => handleRedirect("./contact")}>Explore more</button>
           </div>
         </div>
       </section>

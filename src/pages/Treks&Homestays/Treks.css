@@ -44,8 +44,10 @@
 
 .trek-card h3 {
     margin: 0;
-    font-size: 22px;
-    color: #333;
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+    text-align: center;
 }
 
 .details {
@@ -81,9 +83,12 @@
 }
 
 .price {
-    margin-top: 40px;
+    margin-top: 3rem;
     color: black;
     font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .price del {

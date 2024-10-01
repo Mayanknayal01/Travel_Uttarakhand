@@ -1,0 +1,70 @@
+.Homestays-section {
+    width: 80%;
+    margin: auto;
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+}
+
+
+.all-cards {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.homestays_card {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.homestays_card:hover {
+    transition: scale(1.05);
+}
+
+.homestays_card img {
+    max-width: 100%;
+    height: 300px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.homestays_content {
+    padding: 20px;
+}
+
+.homestays_content h3 {
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.location {
+    margin: auto;
+    font-size: 1rem;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    height: 1.5rem;
+    background-color: rgb(0, 128, 255);
+}
+
+.price {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.price div p {
+    color: rgb(9, 225, 37); 
+}

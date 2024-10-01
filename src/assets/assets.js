@@ -39,6 +39,9 @@ import footer from "./images/footer.png";
 import treks from "./images/trek-page-bg.jpg";
 import homestaysbg from "./images/homestays-page-bg.jpg";
 import contact from "./images/contact-page-bg.jpg";
+// homestays data images
+import Maa_Homestay from "./images/maa_homestays.jpg";
+import Himwanderer_Homestay from "./images/pangot_homestays.jpg";
 
 
 export const dist_slider = [
@@ -122,7 +125,7 @@ export const track_items = [
     dur_image: duration,
   },
   {
-    id: 1,
+    id: 2,
     name: "Bhramtal Trek",
     duration: "4N/5D",
     difficulty: "Easy - Moderate",
@@ -132,7 +135,7 @@ export const track_items = [
     difficulty_image: difficulty,
     dur_image: duration,
   },{
-    id: 1,
+    id: 3,
     name: "Kedarkantha Trek",
     duration: "4N/5D",
     difficulty: "Easy - Moderate",
@@ -142,7 +145,7 @@ export const track_items = [
     difficulty_image: difficulty,
     dur_image: duration,
   },{
-    id: 1,
+    id: 4,
     name: "Tungnath Trek",
     duration: "2N/3D",
     difficulty: "Easy - Moderate",
@@ -151,6 +154,26 @@ export const track_items = [
     image: tungnath_trek,
     difficulty_image: difficulty,
     dur_image: duration,
+  },
+];
+
+export const homestays_items = [
+  {
+    id: 1,
+    homestay_name: "मां's Homestay",
+    real_price: 3999,
+    discounted_price: 2499,
+    image : Maa_Homestay,
+    location: "Mukteshwar, Uttarakhand, IN",
+    availability : "available",
+  },{
+    id: 2,
+    homestay_name: "Himwanderer camps and cottages",
+    real_price: 2999,
+    discounted_price: 1999,
+    image : Himwanderer_Homestay,
+    location: "Pangot, Uttarakhand, IN",
+    availability : "available",
   },
 ];
 
