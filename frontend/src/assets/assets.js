@@ -122,7 +122,7 @@ export const track_items = [
     dur_image: duration,
   },
   {
-    id: 1,
+    id: 2,
     name: "Bhramtal Trek",
     duration: "4N/5D",
     difficulty: "Easy - Moderate",
@@ -132,7 +132,7 @@ export const track_items = [
     difficulty_image: difficulty,
     dur_image: duration,
   },{
-    id: 1,
+    id: 3,
     name: "Kedarkantha Trek",
     duration: "4N/5D",
     difficulty: "Easy - Moderate",
@@ -142,7 +142,7 @@ export const track_items = [
     difficulty_image: difficulty,
     dur_image: duration,
   },{
-    id: 1,
+    id: 4,
     name: "Tungnath Trek",
     duration: "2N/3D",
     difficulty: "Easy - Moderate",

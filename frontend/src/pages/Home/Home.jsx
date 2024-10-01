@@ -13,8 +13,11 @@ import {
   services_img,
   dist_slider,
 } from "../../assets/assets.js";
+import GetTrack from "../../components/GetTrack/GetTrack.jsx";
 
 function Home() {
+  const tracks = GetTrack();
+  console.log(tracks);
   const settings2 = {
     dots: true,
     infinite: true,
@@ -179,7 +182,7 @@ function Home() {
         <h3>Featured Treks</h3>
         <div className="trek-cards">
           <Slider {...settings2}>
-            {track_items.map((item, index) => {
+            {tracks.map((item, index) => {
               return (
                 <Sliders
                   key={index}
@@ -187,11 +190,11 @@ function Home() {
                   name={item.name}
                   duration={item.duration}
                   difficulty={item.difficulty}
-                  real_price={item.real_price}
-                  discounted_price={item.discounted_price}
+                  real_price={item.realprice}
+                  discounted_price={item.discountedprice}
                   image={item.image}
-                  difficulty_image={item.difficulty_image}
-                  dur_image={item.dur_image}
+                  difficulty_image={track_items[0].difficulty_image}
+                  dur_image={track_items[0].dur_image}
                 />
               );
             })}
