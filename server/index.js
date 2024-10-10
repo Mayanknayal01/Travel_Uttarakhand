@@ -27,7 +27,7 @@ db.connect();
 // create a track
 app.post("/new-trek", upload.single("image"), async (req, res) => {
   try {
-    const { name, duration, difficulty, realPrice, discountedPrice } = req.body;
+    const { name, duration, difficulty, realPrice, discountedPrice} = req.body;
     const image = req.file;
     if (!image) {
       return res.status(400).send("Image file is required");
@@ -57,7 +57,40 @@ app.post("/new-trek", upload.single("image"), async (req, res) => {
   }
 });
 
-// GET ALL TRACK
+
+// set track details
+app.post("/new-trek-details", upload.single("image"), async (req, res) => {
+  try {
+    const  {name, heading, overview, highlight, itHeading, itText, dDuration, dDifficulty, dAltitude, dDistance, dTransportation, dMeals, dBestSeason, dTrekType}= req.body;
+    const banner = req.file;
+    if (!banner){
+      return res.status(400).send("Image file is required");
+    }
+    const bannerImage = banner.buffer;
+    const insertQuery = `
+    INSERT INTO trekdetails (banner, name, heading, details, overview, highlight, itinerary)
+    VALUES ($1, $2, $3, $4, $5, $6, $7)
+    RETURNING *;
+    `;
+    const values = [
+      bannerImage,
+      name,
+      heading,
+      `{"duration": ${dDuration},"difficulty":${dDifficulty}, "altitude":${dAltitude}, "distance":${dDistance}, "transportation":${dTransportation}, "meals":${dMeals}, "bestSeason":${dBestSeason}, "trekType":${dTrekType}}`,
+      overview,
+      highlight,
+      `{"dayHighlight": ${itHeading}, "dayExplain": ${itText}}`,
+    ];
+    console.log(values);
+    const result = await db.query(insertQuery, values);
+    res.status(200).json(result.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Error occurred while uploading the track.");
+  }
+});
+
+
 // GET ALL TRACK
 app.get("/treks", async (req, res) => {
   try {
@@ -79,6 +112,9 @@ app.get("/treks", async (req, res) => {
     res.status(500).send("Error fetching tracks.");
   }
 });
+
+// GET TREK DETAILS
+
 
 // update track
 // app.put("/track/:id", (req,res)=>{
