@@ -3,7 +3,7 @@ import "./Home.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Sliders from "../../components/data_trek_homestays/treks_data.jsx";
+import Sliders from "../../components/data_trek_homestays/treks_card_data.jsx";
 import SliderDist from "../../components/Sliders/SliderDist.jsx";
 import Header from "../../components/common/Header/Header.jsx";
 import Banner from "../../components/Banner/Banner.jsx";

@@ -20,6 +20,12 @@ import almora from "./images/almora.jpg"
 // trek component images
 import difficulty from "./images/difficulty.jpg";
 import duration from "./images/duration.jpg";
+import altitude from "./images/altitude.jpg";
+import distance from "./images/distance.jpg";
+import transportation from "./images/transportation.jpg";
+import meals from "./images/meals.jpg";
+import season from "./images/season.jpg";
+import type from "./images/group.jpg";
 import nagtibba_trek from "./images/nagtibba-trek.jpg";
 import bhramtal_trek from "./images/bhramtal-trek.jpg";
 import kedarkantha_trek from "./images/Kedarkantha-trek.jpg";
@@ -42,7 +48,47 @@ import contact from "./images/contact-page-bg.jpg";
 // homestays data images
 import Maa_Homestay from "./images/maa_homestays.jpg";
 import Himwanderer_Homestay from "./images/pangot_homestays.jpg";
+// trek itinerary page
+import Kedarkantha_bg from "./images/Kedarkantha-Trek-bg.jpg";
+import Second_img from "./images/second_img.jpg";
+// itinerary mid banner
+import i_m_banner from "./images/itinerary_mid_banner.jpg";
+// highlight
+import highlight from "./images/highlight.png";
 
+
+export const itinerary_elements = {
+  i_m_banner,
+  highlight,
+  duration,
+  difficulty,
+  altitude,
+  distance,
+  transportation,
+  meals,
+  season,
+  type,
+}
+
+export const itinerary_items = [
+  {
+    id: 1,
+    banner: Kedarkantha_bg,
+    trek_name: "Kedarkantha Trek",
+    second_img: Second_img,
+    heading: "One of India's best Winter Treks with a breathtaking 360° view of the Himalayan range",
+    duration: "4N/5D",
+    difficulty: "Easy to Moderate",
+    altitude: "12500 ft",
+    distance: "20km",
+    transportation: "Bus/Car",
+    meals: "All meals during trek",
+    season: "Oct/Nov/Dec/Jan",
+    type: "Solo/Group",
+    overview: "Get ready for an unforgettable adventure on the Kedarkantha trek! Walk through snow-covered trails, pass by Juda Ka Tal, the frozen lake, and witness stunning sunrise views from the summit. Surrounded by majestic Himalayan peaks, this thrilling winter trek promises excitement and breathtaking beauty at every step.",
+    highlights: "Kedarkantha is a wonderful trek, with pretty campsites and stunning 360-degree views of mountain summits.",
+  }
+]
 
 export const dist_slider = [
   {

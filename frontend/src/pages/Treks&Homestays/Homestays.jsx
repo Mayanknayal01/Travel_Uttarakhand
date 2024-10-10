@@ -3,7 +3,7 @@ import './Homestays.css';
 import Header from "../../components/common/Header/Header";
 import SecondBanner from "../../components/Banner/secondBanner";
 import { homestays_items } from "../../assets/assets";
-import Homestaysdata from "../../components/data_trek_homestays/homestays_data";
+import Homestaysdata from "../../components/data_trek_homestays/homestays_card_data";
 
 const Homestays = () => {
     return (
@@ -11,7 +11,7 @@ const Homestays = () => {
         <Header />
         <SecondBanner />
         <section className="Homestays-section">
-            <div className="all-cards">
+            <div className="homestays-all-cards">
                 {homestays_items.map((item, index) => {
                     return (
                         <Homestaysdata

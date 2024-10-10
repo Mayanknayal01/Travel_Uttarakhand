@@ -6,7 +6,7 @@
 }
 
 
-.allCards {
+.trek-allCards {
     width: 80%;
     margin: auto;
     display: grid;
@@ -50,65 +50,63 @@
     text-align: center;
 }
 
-.details {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+.trek-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 2rem;
     color: #666;
     font-size: 14px;
 }
 
-.details div {
+.trek-details div {
     display: flex;
     align-items: center;
 }
 
 
-.details img {
+.trek-details img {
     width: 35px;
     height: auto;
     margin-right: 5px;
 }
 
-.duration, .difficulty {
-    font-size: 10px;
+.trek-duration, .trek-difficulty {
+    font-size: 0.8rem;
     color: black;
 }
 
-.duration span, .difficulty span {
+.trek-duration span, .trek-difficulty span {
     font-size: 13px;
     font-weight: bold;
     margin: 0;
     padding: 0;
 }
 
-.price {
-    margin-top: 3rem;
+.trek-price {
+    margin: 3rem 1rem;
     color: black;
     font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
 }
 
-.price del {
+.trek-price del {
     color: #888;
     margin-right: 10px;
 }
 
-.price .discount {
+.trek-price .discount {
     color: rgb(10, 195, 10);
     font-size: 22px;
     font-weight: bold;
 }
 
-.buttons {
+.trek-buttons {
+    margin: 30px 1rem;
     display: flex;
-    justify-content:space-evenly;
-    margin: 30px 0;
+    justify-content: space-between;
 }
 
-.btnone, .btntwo {
+.trek-btnone, .trek-btntwo {
     height: 2.7rem;
     width: 7rem;
     border-radius: 5px;
@@ -120,11 +118,11 @@
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.btntwo {
+.trek-btntwo {
     background-color: rgb(9, 225, 37);
 }
 
-.btnone:hover , .btntwo:hover {
+.trek-btnone:hover , .btntwo:hover {
     transform: scale(1.1);
 }
 

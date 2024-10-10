@@ -8,6 +8,7 @@ import AdminDashboard from "./pages/Admin Dashboard/Dashboard";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Treks from "./pages/Treks&Homestays/Treks";
 import Homestays from "./pages/Treks&Homestays/Homestays";
+import TrekItinerary from "./pages/Itinerary/TrekItinerary";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/treks" element={<Treks />} />
         <Route path="/homestays" element={<Homestays />} />
+        <Route path="/treks/itinerary" element={<TrekItinerary />} />
       </Routes>
       <Footer />
     </>

@@ -6,26 +6,26 @@ const Sliders = ({id, name, duration, difficulty, real_price, discounted_price, 
             <img src={image} alt={name} />
             <div className="trek-card-content">
                 <h3>{name}</h3>
-                <div className="details">
-                    <div className="duration">
+                <div className="trek-details">
+                    <div className="trek-duration">
                         <img src={dur_image} alt="Duration" />
                         <span>Duration - -</span>{duration}
                     </div>
-                    <div className="difficulty">
+                    <div className="trek-difficulty">
                         <img src={difficulty_image} alt="Difficulty" />
                         <span>Difficulty - -</span>{difficulty}
                     </div>
                 </div>
-                <div className="price">
+                <div className="trek-price">
                     <div>
                         <del>₹{real_price}</del><span>({Math.floor(discounted_price/real_price*100)}% Off)</span><br />
                         <span>starting from</span>
                         <div className="discount">₹{discounted_price}</div>
                     </div>
                 </div>
-                <div className="buttons">
-                    <a href="/treks" className="btnone">Know More</a>
-                    <a href="google.com" className="btntwo">Send Query</a>
+                <div className="trek-buttons">
+                    <a href="/treks/itinerary" className="trek-btnone">Know More</a>
+                    <a href="google.com" className="trek-btntwo">Send Query</a>
                 </div>
             </div>
         </div>

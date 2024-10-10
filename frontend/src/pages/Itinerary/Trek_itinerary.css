@@ -1,0 +1,105 @@
+.itinerary_first {
+    width: 85%;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.itinerary_grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+.itinerary_pic img{
+    border-radius: 5px;
+    width: 95%;
+}
+
+.itinerary_elements {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 4rem;
+}
+
+.itinerary_heading h2 {
+    color: black;
+}
+.same {
+    font-size: 0.9rem;
+}
+.same img {
+    width: 3rem;
+}
+
+.itinerary_second {
+    width : 85%;
+    margin:auto;
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    min-height: 70rem;
+    gap: 2rem;
+}
+.overview_itinerary {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+}
+.itinerary_overview h1 {
+    text-align: center;
+    font-weight: bolder;
+}
+.itinerary_overview, .itinerary_highlight {
+    padding: 2rem;
+}
+.itinerary_days_details h1 {
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+}
+.days {
+    height: 3rem;
+}
+.days button {
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+}
+.itinerary_highlight {
+    background-color: rgb(227, 227, 227);
+    border-radius: 5px;
+    position: relative;
+}
+.scroll {
+    background-color: white;
+    min-height : 40%;
+    padding: 1rem;
+    border-radius: 5px;
+    position: sticky;
+    top: 5rem;
+}
+.highlight_pic {
+    text-align: center;
+    font-weight: bolder;
+}
+.highlight_pic img {
+    width: 6rem;
+}
+.highlight_pic h2 {
+    text-align: center;
+    font-weight: bolder;
+}
+.itinerary_mid_banner {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    height: 25rem;
+    width: 100%;
+}
+
+.itinerary_mid_banner img {
+    height: 100%;
+    width: 100%;
+    object-fit: conver;
+}

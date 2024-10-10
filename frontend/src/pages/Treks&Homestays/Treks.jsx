@@ -1,6 +1,6 @@
 import React from 'react';
 import './Treks.css';
-import Sliders from "../../components/data_trek_homestays/treks_data.jsx";
+import Sliders from "../../components/data_trek_homestays/treks_card_data.jsx";
 import Header from "../../components/common/Header/Header.jsx";
 import { track_items } from '../../assets/assets';
 import SecondBanner from '../../components/Banner/secondBanner.jsx';
@@ -11,7 +11,7 @@ const Treks = () => {
             <Header />
             <SecondBanner />
             <section className='Treks-section'>
-                <div className="allCards">
+                <div className="trek-allCards">
                     {track_items.map((item, index) => {
                         return (
                             <Sliders

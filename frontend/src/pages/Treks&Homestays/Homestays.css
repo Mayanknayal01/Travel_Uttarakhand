@@ -6,7 +6,7 @@
 }
 
 
-.all-cards {
+.homestays-all-cards {
     width: 80%;
     margin: auto;
     display: grid;
@@ -49,7 +49,7 @@
     font-weight: bold;
 }
 
-.location {
+.homestays-location {
     margin: auto;
     font-size: 1rem;
     color: black;
@@ -60,11 +60,11 @@
     background-color: rgb(0, 128, 255);
 }
 
-.price {
+.homestays-price {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-.price div p {
+.homestays-price div p {
     color: rgb(9, 225, 37); 
 }

@@ -6,8 +6,8 @@ const Homestaysdata = ({id, homestay_name, real_price, discounted_price, image, 
             <img src={image} alt={homestay_name} />
             <div className="homestays_content">
                 <h3>{homestay_name}</h3>
-                <div className='location'>Location:- {location}</div>
-                <div className="price">
+                <div className='homestays-location'>Location:- {location}</div>
+                <div className="homestays-price">
                     <div>
                         <p>{availability}</p>
                     </div>
