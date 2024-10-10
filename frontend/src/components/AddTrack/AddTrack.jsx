@@ -7,9 +7,19 @@ const AddTrack = () => {
     name: "",
     duration: "",
     difficulty: "",
+    altitude: "",
+    distance: "",
+    transportation: "",
+    meals: "",
+    season: "",
+    trek_type: "",
     realPrice: "",
     discountedPrice: "",
     image: null,
+    overview: "",
+    highlight: "",
+    itinerary: "",
+    itinerary_details: "",
   });
 
   const handleChange = (event) => {
@@ -34,9 +44,19 @@ const AddTrack = () => {
     data.append("name", formData.name);
     data.append("duration", formData.duration);
     data.append("difficulty", formData.difficulty);
+    data.append("altitude", formData.altitude);
+    data.append("distance", formData.distance);
+    data.append("transportation", formData.transportation);
+    data.append("meals", formData.meals);
+    data.append("season", formData.season);
+    data.append("trek_type", formData.trek_type);
     data.append("realPrice", parseInt(formData.realPrice));
     data.append("discountedPrice", parseInt(formData.discountedPrice));
     data.append("image", formData.image);
+    data.append("overview", formData.overview);
+    data.append("highlight", formData.highlight);
+    data.append("itinerary", formData.itinerary);
+    data.append("itinerary_details", formData.itinerary_details);
     console.log("Form Data: ", data);
 
     try {
@@ -93,6 +113,54 @@ const AddTrack = () => {
                 onChange={handleChange}
                 id="difficulty"
               />
+              <label htmlFor="altitude">Altitude: </label>
+              <input
+                type="text"
+                name="altitude"
+                placeholder="Altitude"
+                onChange={handleChange}
+                id="altitude"
+              />
+              <label htmlFor="distance">Distance: </label>
+              <input
+                type="text"
+                name="distance"
+                placeholder="Distance"
+                onChange={handleChange}
+                id="distance"
+              />
+              <label htmlFor="transportation">Transportation: </label>
+              <input
+                type="text"
+                name="transportation"
+                placeholder="Transportation"
+                onChange={handleChange}
+                id="transportation"
+              />
+              <label htmlFor="meals">Meals: </label>
+              <input
+                type="text"
+                name="meals"
+                placeholder="Meals"
+                onChange={handleChange}
+                id="meals"
+              />
+              <label htmlFor="season">Season: </label>
+              <input
+                type="text"
+                name="season"
+                placeholder="Season"
+                onChange={handleChange}
+                id="season"
+              />
+              <label htmlFor="trek_type">Trek type: </label>
+              <input
+                type="text"
+                name="trek_type"
+                placeholder="solo/group"
+                onChange={handleChange}
+                id="trek_type"
+              />
               <label htmlFor="realPrice">Real Price: </label>
               <input
                 type="number"
@@ -111,7 +179,7 @@ const AddTrack = () => {
                 onChange={handleChange}
                 required
               />
-              <label htmlFor="image">Image: </label>
+              <label htmlFor="image">Thumbnail Image: </label>
               <input
                 type="file"
                 accept="image/*"
@@ -120,6 +188,38 @@ const AddTrack = () => {
                 onChange={handleFileChange}
                 id="image"
                 required
+              />
+              <label htmlFor="overview">Overview: </label>
+              <input
+                type="text"
+                name="overview"
+                placeholder="Overview"
+                onChange={handleChange}
+                id="overview"
+              />
+              <label htmlFor="highlights">Highlights: </label>
+              <input
+                type="text"
+                name="highlights"
+                placeholder="Highlights"
+                onChange={handleChange}
+                id="highlights"
+              />
+              <label htmlFor="itinerary">Itinerary: </label>
+              <input
+                type="text"
+                name="days"
+                placeholder="Days"
+                onChange={handleChange}
+                id="days"
+              />
+              <label htmlFor="itinerary_details"></label>
+              <input
+                type="text"
+                name="detail"
+                placeholder="Day's detail"
+                onChange={handleChange}
+                id="detail"
               />
             </div>
             <button type="submit">Add</button>
