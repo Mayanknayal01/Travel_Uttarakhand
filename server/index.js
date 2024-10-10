@@ -27,7 +27,7 @@ db.connect();
 // create a track
 app.post("/new-trek", upload.single("image"), async (req, res) => {
   try {
-    const { name, duration, difficulty, realPrice, discountedPrice} = req.body;
+    const { name, duration, difficulty, realPrice, discountedPrice } = req.body;
     const image = req.file;
     if (!image) {
       return res.status(400).send("Image file is required");
@@ -57,16 +57,30 @@ app.post("/new-trek", upload.single("image"), async (req, res) => {
   }
 });
 
-
 // set track details
-app.post("/new-trek-details", upload.single("image"), async (req, res) => {
+app.post("/new-trek-details", upload.single("banner"), async (req, res) => {
   try {
-    const  {name, heading, overview, highlight, itHeading, itText, dDuration, dDifficulty, dAltitude, dDistance, dTransportation, dMeals, dBestSeason, dTrekType}= req.body;
+    const {
+      name,
+      heading,
+      overview,
+      highlight,
+      itinerary,
+      itinerary_details,
+      duration,
+      difficulty,
+      altitude,
+      distance,
+      transportation,
+      meals,
+      season,
+      trek_type,
+    } = req.body;
     const banner = req.file;
-    if (!banner){
+    if (!banner) {
       return res.status(400).send("Image file is required");
     }
-    const bannerImage = banner.buffer;
+    const bannerImage = image.buffer;
     const insertQuery = `
     INSERT INTO trekdetails (banner, name, heading, details, overview, highlight, itinerary)
     VALUES ($1, $2, $3, $4, $5, $6, $7)
@@ -76,10 +90,10 @@ app.post("/new-trek-details", upload.single("image"), async (req, res) => {
       bannerImage,
       name,
       heading,
-      `{"duration": ${dDuration},"difficulty":${dDifficulty}, "altitude":${dAltitude}, "distance":${dDistance}, "transportation":${dTransportation}, "meals":${dMeals}, "bestSeason":${dBestSeason}, "trekType":${dTrekType}}`,
+      `{"duration": "${duration}","difficulty":"${difficulty}", "altitude":"${altitude}", "distance":"${distance}", "transportation":"${transportation}", "meals":"${meals}", "bestSeason":"${season}", "trekType":"${trek_type}"}`,
       overview,
       highlight,
-      `{"dayHighlight": ${itHeading}, "dayExplain": ${itText}}`,
+      `{"dayHighlight": "${itinerary}", "dayExplain": "${itinerary_details}"}`,
     ];
     console.log(values);
     const result = await db.query(insertQuery, values);
@@ -89,7 +103,6 @@ app.post("/new-trek-details", upload.single("image"), async (req, res) => {
     res.status(500).send("Error occurred while uploading the track.");
   }
 });
-
 
 // GET ALL TRACK
 app.get("/treks", async (req, res) => {
@@ -114,7 +127,6 @@ app.get("/treks", async (req, res) => {
 });
 
 // GET TREK DETAILS
-
 
 // update track
 // app.put("/track/:id", (req,res)=>{

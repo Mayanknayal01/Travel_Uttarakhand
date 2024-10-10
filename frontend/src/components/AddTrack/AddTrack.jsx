@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./AddTrack.css";
 
-
 const AddTrack = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -15,6 +14,8 @@ const AddTrack = () => {
     trek_type: "",
     realPrice: "",
     discountedPrice: "",
+    banner: null,
+    heading: "",
     image: null,
     overview: "",
     highlight: "",
@@ -31,44 +32,69 @@ const AddTrack = () => {
   };
 
   const handleFileChange = (event) => {
+    const { name, files } = event.target; // Get the input name and files
+    const file = files[0]; // Get the first file
+
     setFormData((prevState) => ({
       ...prevState,
-      image: event.target.files[0],
+      [name]: file, // Update the specific file input in the state
     }));
   };
 
   const handleAdd = async (e) => {
     e.preventDefault();
 
-    const data = new FormData();
-    data.append("name", formData.name);
-    data.append("duration", formData.duration);
-    data.append("difficulty", formData.difficulty);
-    data.append("altitude", formData.altitude);
-    data.append("distance", formData.distance);
-    data.append("transportation", formData.transportation);
-    data.append("meals", formData.meals);
-    data.append("season", formData.season);
-    data.append("trek_type", formData.trek_type);
-    data.append("realPrice", parseInt(formData.realPrice));
-    data.append("discountedPrice", parseInt(formData.discountedPrice));
-    data.append("image", formData.image);
-    data.append("overview", formData.overview);
-    data.append("highlight", formData.highlight);
-    data.append("itinerary", formData.itinerary);
-    data.append("itinerary_details", formData.itinerary_details);
-    console.log("Form Data: ", data);
+    const trek = new FormData();
+    trek.append("name", formData.name);
+    trek.append("realPrice", parseInt(formData.realPrice));
+    trek.append("discountedPrice", parseInt(formData.discountedPrice));
+    trek.append("image", formData.image);
+    trek.append("duration", formData.duration);
+    trek.append("difficulty", formData.difficulty);
+    console.log("Form Data: ", trek);
+
+    const trekdetails = new FormData();
+
+    trekdetails.append("name", formData.name);
+    trekdetails.append("duration", formData.duration);
+    trekdetails.append("difficulty", formData.difficulty);
+    trekdetails.append("altitude", formData.altitude);
+    trekdetails.append("distance", formData.distance);
+    trekdetails.append("transportation", formData.transportation);
+    trekdetails.append("meals", formData.meals);
+    trekdetails.append("season", formData.season);
+    trekdetails.append("trek_type", formData.trek_type);
+    trekdetails.append("banner", formData.banner);
+    trekdetails.append("heading", formData.heading);
+    trekdetails.append("overview", formData.overview);
+    trekdetails.append("highlight", formData.highlight);
+    trekdetails.append("itinerary", formData.itinerary);
+    trekdetails.append("itinerary_details", formData.itinerary_details);
 
     try {
-      const response = await fetch("http://localhost:5000/new-trek", {
+      const response1 = await fetch("http://localhost:5000/new-trek", {
         method: "POST",
-        body: data,
+        body: trek,
       });
-      if (!response.ok) {
+      if (!response1.ok) {
         throw new Error("Failed to upload track.");
       }
 
-      const result = await response.json();
+      const result1 = await response1.json();
+      console.log("Trek added:", result1);
+    } catch (error) {
+      console.error("Error uploading trek: ", error);
+    }
+    try {
+      const response2 = await fetch("http://localhost:5000/new-trek-details", {
+        method: "POST",
+        body: trekdetails,
+      });
+      if (!response2.ok) {
+        throw new Error("Failed to upload track.");
+      }
+
+      const result = await response2.json();
       console.log("Trek added:", result);
       window.location.reload();
     } catch (error) {
@@ -189,6 +215,25 @@ const AddTrack = () => {
                 id="image"
                 required
               />
+              <label htmlFor="banner">Banner Image: </label>
+              <input
+                type="file"
+                accept="image/*"
+                placeholder="Banner Image"
+                name="banner"
+                onChange={handleFileChange}
+                id="banner"
+                required
+              />
+              <label htmlFor="heading">Heading: </label>
+              <input
+                type="text"
+                placeholder="Heading"
+                id="heading"
+                name="heading"
+                onChange={handleChange}
+                required
+              />
               <label htmlFor="overview">Overview: </label>
               <input
                 type="text"
@@ -197,29 +242,29 @@ const AddTrack = () => {
                 onChange={handleChange}
                 id="overview"
               />
-              <label htmlFor="highlights">Highlights: </label>
+              <label htmlFor="highlight">Highlights: </label>
               <input
                 type="text"
-                name="highlights"
+                name="highlight"
                 placeholder="Highlights"
                 onChange={handleChange}
-                id="highlights"
+                id="highlight"
               />
               <label htmlFor="itinerary">Itinerary: </label>
               <input
                 type="text"
-                name="days"
+                name="itinerary"
                 placeholder="Days"
                 onChange={handleChange}
-                id="days"
+                id="itinerary"
               />
-              <label htmlFor="itinerary_details"></label>
+              <label htmlFor="itinerary_details">itinerary_details: </label>
               <input
                 type="text"
-                name="detail"
+                name="itinerary_details"
                 placeholder="Day's detail"
                 onChange={handleChange}
-                id="detail"
+                id="itinerary_details"
               />
             </div>
             <button type="submit">Add</button>
