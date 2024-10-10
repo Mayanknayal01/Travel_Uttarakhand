@@ -86,6 +86,8 @@ export const itinerary_items = [
     season: "Oct/Nov/Dec/Jan",
     type: "Solo/Group",
     overview: "Get ready for an unforgettable adventure on the Kedarkantha trek! Walk through snow-covered trails, pass by Juda Ka Tal, the frozen lake, and witness stunning sunrise views from the summit. Surrounded by majestic Himalayan peaks, this thrilling winter trek promises excitement and breathtaking beauty at every step.",
+    toggle_heading: "Day 1: Dehradun to Sankri Base Camp",
+    days_detail: "Arrive at Tribhuwan International Airport, Kathmandu, you are welcomed by the team and then you will be transferred to your hotel. This trail goes through Ghorepani Poon Hill. Normally, the trek starts like Pokhara to Nayapul and ends like Phedi to Pokhara. While early travel tended to be slower, more dangerous, and more dominated by trade and migration, cultural and technological advances over many years have tended to mean that travel has become easier and more accessible. The evolution of technology in such diverse fields as horse tack and bullet trains has contributed to this trend.",
     highlights: "Kedarkantha is a wonderful trek, with pretty campsites and stunning 360-degree views of mountain summits.",
   }
 ]

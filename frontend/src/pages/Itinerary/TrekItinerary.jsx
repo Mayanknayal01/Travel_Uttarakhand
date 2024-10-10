@@ -27,6 +27,8 @@ const TrekItinerary = () => {
                         season={item.season}
                         type={item.type}
                         overview={item.overview}
+                        toggle_heading={item.toggle_heading}
+                        days_detail={item.days_detail}
                         highlights={item.highlights}
                         />
                     );

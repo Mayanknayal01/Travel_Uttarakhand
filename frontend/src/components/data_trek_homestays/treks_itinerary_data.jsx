@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { itinerary_elements } from '../../assets/assets';
 
-const TreksData = ({id, banner, trek_name, second_img, heading, duration, difficulty, altitude, distance, transportation, meals, season, type, overview, highlights 
+const TreksData = ({id, banner, trek_name, second_img, heading, duration, difficulty, altitude, distance, transportation, meals, season, type, overview, toggle_heading, days_detail, highlights 
 }) => {
     
     const [isExpanded, setIsExpanded] = useState(false);
@@ -81,12 +81,12 @@ const TreksData = ({id, banner, trek_name, second_img, heading, duration, diffic
                     <h1>Itinerary</h1>
                     <div className="days">
                         <button onClick={toggleExpand} className='trek_itinerary_toggle_button'>
-                            {isExpanded ? '-' : '+'} Day 1: Dehradun to Sankri Base Camp
+                            {isExpanded ? '-' : '+'} {toggle_heading}
                         </button>
                         <div className={`days-content ${isExpanded ? 'expanded' : ''}`}>
                             {isExpanded && (
                                 <div className="expanded_content">
-                                    <p>Arrive at Tribhuwan International Airport, Kathmandu, you are welcomed by the team and then you will be transferred to your hotel. This trail goes through Ghorepani Poon Hill. Normally, the trek starts like Pokhara to Nayapul and ends like Phedi to Pokhara. While early travel tended to be slower, more dangerous, and more dominated by trade and migration, cultural and technological advances over many years have tended to mean that travel has become easier and more accessible. The evolution of technology in such diverse fields as horse tack and bullet trains has contributed to this trend.</p>
+                                    <p>{days_detail}</p>
                                 </div>
                             )}
                         </div>
