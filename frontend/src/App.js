@@ -19,6 +19,7 @@ function App() {
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/treks" element={<Treks />} />
         <Route path="/homestays" element={<Homestays />} />
+        {/* ye h dekh sale */}
         <Route path="/treks/itinerary" element={<TrekItinerary />} />
       </Routes>
       <Footer />
