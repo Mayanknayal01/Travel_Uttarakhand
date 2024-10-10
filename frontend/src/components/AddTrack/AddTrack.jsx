@@ -40,7 +40,7 @@ const AddTrack = () => {
     console.log("Form Data: ", data);
 
     try {
-      const response = await fetch("http://localhost:5000/new-track", {
+      const response = await fetch("http://localhost:5000/new-trek", {
         method: "POST",
         body: data,
       });
@@ -49,10 +49,10 @@ const AddTrack = () => {
       }
 
       const result = await response.json();
-      console.log("Track added:", result);
+      console.log("Trek added:", result);
       window.location.reload();
     } catch (error) {
-      console.error("Error uploading track: ", error);
+      console.error("Error uploading trek: ", error);
     }
   };
 

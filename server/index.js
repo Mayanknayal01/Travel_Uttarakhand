@@ -5,7 +5,7 @@ import multer from "multer";
 import db from "./db.js";
 import dotenv from "dotenv";
 
-dotenv.config(); 
+dotenv.config();
 
 const port = process.env.PORT || 5000;
 
@@ -24,9 +24,8 @@ const upload = multer({ storage: storage });
 
 db.connect();
 
-
 // create a track
-app.post("/new-track", upload.single("image"), async (req, res) => {
+app.post("/new-trek", upload.single("image"), async (req, res) => {
   try {
     const { name, duration, difficulty, realPrice, discountedPrice } = req.body;
     const image = req.file;
@@ -61,24 +60,25 @@ app.post("/new-track", upload.single("image"), async (req, res) => {
 // GET ALL TRACK
 // GET ALL TRACK
 app.get("/treks", async (req, res) => {
-    try {
-        const allTracks = await db.query("SELECT * FROM tracks");
-        
-        // Convert the image buffer to a Base64 string
-        const tracksWithBase64Images = allTracks.rows.map(track => {
-            return {
-                ...track,
-                image: track.image ? `data:image/jpeg;base64,${track.image.toString('base64')}` : null // Convert buffer to Base64 string
-            };
-        });
+  try {
+    const allTracks = await db.query("SELECT * FROM treks");
 
-        res.json(tracksWithBase64Images);
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).send("Error fetching tracks.");
-    }
+    // Convert the image buffer to a Base64 string
+    const tracksWithBase64Images = allTracks.rows.map((track) => {
+      return {
+        ...track,
+        image: track.image
+          ? `data:image/jpeg;base64,${track.image.toString("base64")}`
+          : null, // Convert buffer to Base64 string
+      };
+    });
+
+    res.json(tracksWithBase64Images);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Error fetching tracks.");
+  }
 });
-
 
 // update track
 // app.put("/track/:id", (req,res)=>{
@@ -102,9 +102,6 @@ app.get("/treks", async (req, res) => {
 app.listen(port, () => {
   console.log(`Server has started on port ${port}...`);
 });
-
-
-
 
 // import express from "express";
 // import cors from "cors";
@@ -138,7 +135,7 @@ app.listen(port, () => {
 //   try {
 //     const { name, duration, difficulty, realPrice, discountedPrice } = req.body;
 //     const image = req.file;
-    
+
 //     if (!image) {
 //       return res.status(400).send("Image file is required");
 //     }

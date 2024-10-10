@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const GetTrack = () => {
     const [tracks, setTracks] = useState([]);
@@ -6,14 +6,14 @@ const GetTrack = () => {
     useEffect(()=>{
         const fetchTrack = async ()=> {
             try {
-                const response = await fetch("http://localhost:5000/tracks");
+                const response = await fetch("http://localhost:5000/treks");
                 if (!response.ok){
-                    throw new Error("Failed to fetch tracks.");
+                    throw new Error("Failed to fetch treks.");
                 }
                 const data  = await response.json();
                 setTracks(data);
             } catch (error) {
-                console.error("Error fetching tracks: ", error);
+                console.error("Error fetching treks: ", error);
             }
         };
         fetchTrack();

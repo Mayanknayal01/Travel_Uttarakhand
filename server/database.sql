@@ -1,25 +1,5 @@
-import { useEffect, useState } from 'react';
-
-const useTracks = () => {
-    const [tracks, setTracks] = useState([]);
-
-    useEffect(() => {
-        const fetchTracks = async () => {
-            try {
-                const response = await fetch("http://localhost:5000/tracks");
-                if (!response.ok) {
-                    throw new Error("Failed to fetch tracks.");
-                }
-                const data = await response.json();
-                setTracks(data);
-            } catch (error) {
-                console.error("Error fetching tracks: ", error);
-            }
-        };
-        fetchTracks();
-    }, []);
-
-    return tracks;
-}
-
-export default useTracks;
+-- CREATE treks table
+CREATE TABLE treks(id SERIAL PRIMARY KEY, name VARCHAR(255) NOT NULL, duration VARCHAR(45) NOT NULL, difficulty VARCHAR(45) NOT NULL, realPrice INT NOT NULL, discountedPrice INT NOT NULL, image BYTEA);
+-- create trekdetails table
+CREATE TABLE trekdetails(id SERIAL PRIMARY KEY, banner BYTEA NOT NULL, name VARCHAR(255) NOT NULL, head
+ing TEXT NOT NULL, details JSONB NOT NULL, overview TEXT NOT NULL, highlight TEXT NOT NULL, itinerary JSONB NOT NULL);
