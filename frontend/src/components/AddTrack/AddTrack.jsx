@@ -16,6 +16,7 @@ const AddTrack = () => {
     discountedPrice: "",
     banner: null,
     heading: "",
+    mainImage: null,
     image: null,
     overview: "",
     highlight: "",
@@ -56,6 +57,7 @@ const AddTrack = () => {
     const trekdetails = new FormData();
 
     trekdetails.append("name", formData.name);
+    trekdetails.append("mainImage", formData.mainImage);
     trekdetails.append("duration", formData.duration);
     trekdetails.append("difficulty", formData.difficulty);
     trekdetails.append("altitude", formData.altitude);
@@ -205,7 +207,7 @@ const AddTrack = () => {
                 onChange={handleChange}
                 required
               />
-              <label htmlFor="image">Thumbnail Image: </label>
+              <label htmlFor="image">Card Image: </label>
               <input
                 type="file"
                 accept="image/*"
@@ -223,6 +225,16 @@ const AddTrack = () => {
                 name="banner"
                 onChange={handleFileChange}
                 id="banner"
+                required
+              />
+              <label htmlFor="mainImage">Main Image: </label>
+              <input
+                type="file"
+                accept="image/*"
+                placeholder="Main Image"
+                name="mainImage"
+                onChange={handleFileChange}
+                id="mainImage"
                 required
               />
               <label htmlFor="heading">Heading: </label>

@@ -40,6 +40,7 @@ const TrekItinerary = () => {
                         <TreksData
                         key={trekDetails.id}
                         id={trekDetails.id}
+                        mainImage={trekDetails.mainImage}
                         banner={trekDetails.banner}
                         trek_name={trekDetails.name}
                         heading={trekDetails.heading}
