@@ -1,6 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const Sliders = ({id, name, duration, difficulty, real_price, discounted_price, image,difficulty_image , dur_image}) => {
+    
+    const navigate = useNavigate();
+
+    const handleShowItinerary = (trekId) => {
+        navigate(`/treks/itinerary/${trekId}`); // Show the itinerary details
+    };
     return (
         <div className="trek-card">
             <img src={image} alt={name} />
@@ -24,7 +32,7 @@ const Sliders = ({id, name, duration, difficulty, real_price, discounted_price, 
                     </div>
                 </div>
                 <div className="trek-buttons">
-                    <a href="/treks/itinerary" className="trek-btnone">Know More</a>
+                    <button onClick={() => handleShowItinerary(id)} className="trek-btnone">Know More</button>
                     <a href="google.com" className="trek-btntwo">Send Query</a>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { itinerary_elements } from '../../assets/assets';
 
-const TreksData = ({id, banner, trek_name, second_img, heading, duration, difficulty, altitude, distance, transportation, meals, season, type, overview, toggle_heading, days_detail, highlights 
+const TreksData = ({id, banner, name, heading, duration, difficulty, altitude, distance, transportation, meals, season, type, overview, toggle_heading, days_detail, highlights 
 }) => {
     
     const [isExpanded, setIsExpanded] = useState(false);
@@ -23,7 +23,7 @@ const TreksData = ({id, banner, trek_name, second_img, heading, duration, diffic
                     alignItems: 'center',
                 }}>
                 </div>
-                <h1>{trek_name}</h1>
+                <h1>{name}</h1>
             </div>
             <div className="itinerary_first">
                 <div className="itinerary_heading">
@@ -66,9 +66,9 @@ const TreksData = ({id, banner, trek_name, second_img, heading, duration, diffic
                             </div>
                         </div>
                     </div>
-                    <div className="itinerary_pic">
+                    {/* <div className="itinerary_pic">
                         <img src={second_img} alt={trek_name} />
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="itinerary_second">

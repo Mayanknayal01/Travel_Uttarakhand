@@ -1,38 +1,61 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Trek_itinerary.css';
 import TreksData from "../../components/data_trek_homestays/treks_itinerary_data.jsx";
 import Header from '../../components/common/Header/Header.jsx';
-import { itinerary_items } from '../../assets/assets.js';
+import { useParams } from 'react-router-dom';
 
-const TrekItinerary = () => {
+const TrekItinerary = async() => {
+    const [trekDetails, setTrekDetails] = useState(null);
+    const {id} = useParams();
+    useEffect(() => {
+        const fetchTrekDetails = async () => {
+            try {
+                const response = await fetch(`http://localhost:5000/trekdetails/${id}`);
+                
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                setTrekDetails(data);
+            } catch (error) {
+                console.error('Error fetching trek details:', error);
+            }
+        };
+
+        fetchTrekDetails();
+    }, []);
+
+    if (!trekDetails) {
+        return <p>Loading...</p>; // Or some loading indicator
+    }
+    
+    
+
     return (
         <>
             <Header />
             <section className="allItinerary">
-                {itinerary_items.map((item, index) => {
-                    return (
+                
                         <TreksData
-                        key={index}
-                        id={item.id}
-                        banner={item.banner}
-                        trek_name={item.trek_name}
-                        second_img={item.second_img}
-                        heading={item.heading}
-                        duration={item.duration}
-                        difficulty={item.difficulty}
-                        altitude={item.altitude}
-                        distance={item.distance}
-                        transportation={item.transportation}
-                        meals={item.meals}
-                        season={item.season}
-                        type={item.type}
-                        overview={item.overview}
-                        toggle_heading={item.toggle_heading}
-                        days_detail={item.days_detail}
-                        highlights={item.highlights}
+                        key={trekDetails.id}
+                        id={trekDetails.id}
+                        banner={trekDetails.banner}
+                        trek_name={trekDetails.name}
+                        heading={trekDetails.heading}
+                        duration={trekDetails.duration}
+                        difficulty={trekDetails.difficulty}
+                        altitude={trekDetails.altitude}
+                        distance={trekDetails.distance}
+                        transportation={trekDetails.transportation}
+                        meals={trekDetails.meals}
+                        season={trekDetails.season}
+                        type={trekDetails.trek_type}
+                        overview={trekDetails.overview}
+                        toggle_heading={trekDetails.dayHighlight}
+                        days_detail={trekDetails.dayExplain}
+                        highlights={trekDetails.highlight}
                         />
-                    );
-                })}
             </section>
         </>
     )

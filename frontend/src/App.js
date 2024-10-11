@@ -11,6 +11,7 @@ import Homestays from "./pages/Treks&Homestays/Homestays";
 import TrekItinerary from "./pages/Itinerary/TrekItinerary";
 
 function App() {
+
   return (
     <>
       <Routes>
@@ -20,7 +21,7 @@ function App() {
         <Route path="/treks" element={<Treks />} />
         <Route path="/homestays" element={<Homestays />} />
         {/* ye h dekh sale */}
-        <Route path="/treks/itinerary" element={<TrekItinerary />} />
+        <Route path="/treks/itinerary/:id" element={<TrekItinerary />} />
       </Routes>
       <Footer />
     </>
