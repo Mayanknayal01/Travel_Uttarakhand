@@ -68,6 +68,7 @@ export const itinerary_elements = {
   meals,
   season,
   type,
+  Second_img,
 }
 
 export const itinerary_items = [

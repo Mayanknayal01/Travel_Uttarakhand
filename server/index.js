@@ -95,7 +95,7 @@ app.post("/new-trek-details", upload.single("banner"), async (req, res) => {
       highlight,
       `{"dayHighlight": "${itinerary}", "dayExplain": "${itinerary_details}"}`,
     ];
-    
+
     const result = await db.query(insertQuery, values);
     res.status(200).json(result.rows[0]);
   } catch (err) {
@@ -131,7 +131,7 @@ app.get("/treks", async (req, res) => {
 app.get("/trekdetails/:id", async (req, res) => {
   const { id } = req.params; // Extract trek ID from URL parameter
   console.log(id);
-  
+
   try {
     // Query to fetch trek details based on ID
     const trekDetailsQuery = `
@@ -146,28 +146,29 @@ app.get("/trekdetails/:id", async (req, res) => {
 
     // Get the single trek detail
     const details = result.rows[0];
-    const trekDetails = JSON.parse(details.details);
-    const trekit = JSON.parse(details.itinerary);
+    console.log(details);
+    const trekDetails = details.details;
+    console.log(trekDetails);
+    
+    const trekit = details.itinerary;
+    console.log(trekit);
     // Destructure the nested objects
-    const { 
-      duration, 
-      difficulty, 
-      altitude, 
-      distance, 
-      transportation, 
-      meals, 
-      season, 
-      trek_type 
+    const {
+      duration,
+      difficulty,
+      altitude,
+      distance,
+      transportation,
+      meals,
+      bestSeason,
+      trekType,
     } = trekDetails; // Assuming details.details is an object
 
-    const { 
-      dayHighlight, 
-      dayExplain 
-    } = trekit; // Assuming details.itinerary is an object
+    const { dayHighlight, dayExplain } = trekit; // Assuming details.itinerary is an object
 
     // Convert image to Base64 format
-    const base64Image = details.banner 
-      ? `data:banner/jpeg;base64,${details.banner.toString("base64")}` 
+    const base64Image = details.banner
+      ? `data:banner/jpeg;base64,${details.banner.toString("base64")}`
       : null; // Handle case where image might be null
 
     // Create a response object
@@ -183,8 +184,8 @@ app.get("/trekdetails/:id", async (req, res) => {
       distance,
       transportation,
       meals,
-      season,
-      trek_type,
+      bestSeason,
+      trekType,
       dayHighlight,
       dayExplain,
       banner: base64Image,
@@ -197,7 +198,6 @@ app.get("/trekdetails/:id", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
-
 
 // update track
 // app.put("/track/:id", (req,res)=>{

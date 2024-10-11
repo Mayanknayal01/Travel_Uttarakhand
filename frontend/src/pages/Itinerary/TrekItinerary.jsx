@@ -4,7 +4,7 @@ import TreksData from "../../components/data_trek_homestays/treks_itinerary_data
 import Header from '../../components/common/Header/Header.jsx';
 import { useParams } from 'react-router-dom';
 
-const TrekItinerary = async() => {
+const TrekItinerary = () => {
     const [trekDetails, setTrekDetails] = useState(null);
     const {id} = useParams();
     useEffect(() => {
@@ -24,7 +24,7 @@ const TrekItinerary = async() => {
         };
 
         fetchTrekDetails();
-    }, []);
+    }, [id]);
 
     if (!trekDetails) {
         return <p>Loading...</p>; // Or some loading indicator

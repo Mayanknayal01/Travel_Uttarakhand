@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { itinerary_elements } from '../../assets/assets';
+import { itinerary_elements, itinerary_items } from '../../assets/assets';
+
 
 const TreksData = ({id, banner, name, heading, duration, difficulty, altitude, distance, transportation, meals, season, type, overview, toggle_heading, days_detail, highlights 
 }) => {
@@ -66,9 +67,9 @@ const TreksData = ({id, banner, name, heading, duration, difficulty, altitude, d
                             </div>
                         </div>
                     </div>
-                    {/* <div className="itinerary_pic">
-                        <img src={second_img} alt={trek_name} />
-                    </div> */}
+                    <div className="itinerary_pic">
+                        <img src={itinerary_elements.Second_img} alt={itinerary_items.trek_name} />
+                    </div>
                 </div>
             </div>
             <div className="itinerary_second">
