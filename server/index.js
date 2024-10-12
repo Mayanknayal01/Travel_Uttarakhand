@@ -4,6 +4,8 @@ import bodyParser from "body-parser";
 import multer from "multer";
 import db from "./db.js";
 import dotenv from "dotenv";
+import sharp from "sharp";
+
 
 dotenv.config();
 
@@ -16,7 +18,6 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json()); //req.body
-
 //multer
 
 const storage = multer.memoryStorage();
@@ -34,6 +35,10 @@ app.post("/new-trek", upload.single("image"), async (req, res) => {
     }
     const imageData = image.buffer;
 
+    const webpImageBuffer = await sharp(imageData)
+      .webp({ quality: 100 }) // Optional: Set quality (0-100)
+      .toBuffer();
+
     const insertQuery = `
     INSERT INTO treks (name, duration, difficulty, realPrice, discountedPrice, image)
     VALUES ($1, $2, $3, $4, $5, $6)
@@ -45,9 +50,8 @@ app.post("/new-trek", upload.single("image"), async (req, res) => {
       difficulty,
       parseFloat(realPrice),
       parseFloat(discountedPrice),
-      imageData,
-    ];
-    console.log(values);
+      webpImageBuffer,
+    ]
 
     const result = await db.query(insertQuery, values);
     res.status(200).json(result.rows[0]);
@@ -58,7 +62,7 @@ app.post("/new-trek", upload.single("image"), async (req, res) => {
 });
 
 // set track details
-app.post("/new-trek-details", upload.single("banner"), async (req, res) => {
+app.post("/new-trek-details", upload.fields([{ name: 'banner' }, { name: 'mainImage' }]), async (req, res) => {
   try {
     const {
       name,
@@ -76,18 +80,26 @@ app.post("/new-trek-details", upload.single("banner"), async (req, res) => {
       season,
       trek_type,
     } = req.body;
-    const banner = req.file;
-    if (!banner) {
-      return res.status(400).send("Image file is required");
+    const bannerImage = req.files.banner ? req.files.banner[0].buffer : null;
+    const webpBanner = await sharp(bannerImage)
+      .webp({ quality: 100 }) // Optional: Set quality (0-100)
+      .toBuffer();
+    const mainImage = req.files.mainImage ? req.files.mainImage[0].buffer : null;
+    const webpMainImage = await sharp(mainImage)
+      .webp({ quality: 100 }) // Optional: Set quality (0-100)
+      .toBuffer();
+    if (!webpBanner || !webpMainImage) {
+      return res.status(400).send("Both banner and mainImage images are required");
     }
-    const bannerImage = banner.buffer;
+    
     const insertQuery = `
-    INSERT INTO trekdetails (banner, name, heading, details, overview, highlight, itinerary)
-    VALUES ($1, $2, $3, $4, $5, $6, $7)
+    INSERT INTO trekdetails (banner, mainImage, name, heading, details, overview, highlight, itinerary)
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
     RETURNING *;
     `;
     const values = [
-      bannerImage,
+      webpBanner,
+      webpMainImage,
       name,
       heading,
       `{"duration": "${duration}","difficulty":"${difficulty}", "altitude":"${altitude}", "distance":"${distance}", "transportation":"${transportation}", "meals":"${meals}", "bestSeason":"${season}", "trekType":"${trek_type}"}`,
@@ -97,6 +109,7 @@ app.post("/new-trek-details", upload.single("banner"), async (req, res) => {
     ];
 
     const result = await db.query(insertQuery, values);
+    console.log(result.rows[0]);
     res.status(200).json(result.rows[0]);
   } catch (err) {
     console.error(err.message);
@@ -148,10 +161,7 @@ app.get("/trekdetails/:id", async (req, res) => {
     const details = result.rows[0];
     console.log(details);
     const trekDetails = details.details;
-    console.log(trekDetails);
-    
     const trekit = details.itinerary;
-    console.log(trekit);
     // Destructure the nested objects
     const {
       duration,
@@ -165,12 +175,16 @@ app.get("/trekdetails/:id", async (req, res) => {
     } = trekDetails; // Assuming details.details is an object
 
     const { dayHighlight, dayExplain } = trekit; // Assuming details.itinerary is an object
-
+    // console.log(details.mainImage);
     // Convert image to Base64 format
-    const base64Image = details.banner
+    const bannerbase64Image = details.banner
       ? `data:banner/jpeg;base64,${details.banner.toString("base64")}`
       : null; // Handle case where image might be null
+      const mainBase64Image = details.mainimage // Ensure this matches your DB column
+      ? `data:image/jpeg;base64,${details.mainimage.toString("base64")}`
+      : null;
 
+    
     // Create a response object
     const responseData = {
       id: details.id,
@@ -188,10 +202,11 @@ app.get("/trekdetails/:id", async (req, res) => {
       trekType,
       dayHighlight,
       dayExplain,
-      banner: base64Image,
+      banner: bannerbase64Image,
+      mainImage: mainBase64Image,
     };
 
-    console.log(responseData); // For debugging
+    // console.log(responseData); // For debugging
     res.json(responseData); // Return the trek details as JSON
   } catch (err) {
     console.error("Error fetching trek details:", err.message);

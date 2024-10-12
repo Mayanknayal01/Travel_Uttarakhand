@@ -50,8 +50,8 @@ const TrekItinerary = () => {
                         distance={trekDetails.distance}
                         transportation={trekDetails.transportation}
                         meals={trekDetails.meals}
-                        season={trekDetails.season}
-                        type={trekDetails.trek_type}
+                        season={trekDetails.bestSeason}
+                        type={trekDetails.trekType}
                         overview={trekDetails.overview}
                         toggle_heading={trekDetails.dayHighlight}
                         days_detail={trekDetails.dayExplain}
