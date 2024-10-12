@@ -18,6 +18,9 @@ const Homestays = () => {
                         key={index}
                         id={item.id}
                         homestay_name={item.homestay_name}
+                        rating={item.rating}
+                        remark={item.remark}
+                        reviews={item.reviews}
                         real_price={item.real_price}
                         discounted_price={item.discounted_price}
                         image={item.image}
