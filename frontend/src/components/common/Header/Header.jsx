@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import './Header.css';
 
-const Header = () => {
+const Header = ({style}) => {
     return (
-        <header className="header">
+        <header className="header" style={style}>
         <div className="logo">
             <Link to="/">Travel_Uttarakhand</Link> {/* Replace with your logo image if needed */}
         </div>

@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Treks from "./pages/Treks&Homestays/Treks";
 import Homestays from "./pages/Treks&Homestays/Homestays";
 import TrekItinerary from "./pages/Itinerary/TrekItinerary";
+import HomestaysItinerary from "./pages/Itinerary/HomestaysItinerary";
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/homestays" element={<Homestays />} />
         {/* ye h dekh sale */}
         <Route path="/treks/itinerary/:id" element={<TrekItinerary />} />
+        <Route path="/homestays/itinerary" element= {<HomestaysItinerary />} />
       </Routes>
       <Footer />
     </>

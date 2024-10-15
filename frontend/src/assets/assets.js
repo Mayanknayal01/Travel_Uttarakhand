@@ -55,7 +55,32 @@ import Second_img from "./images/second_img.jpg";
 import i_m_banner from "./images/itinerary_mid_banner.jpg";
 // highlight
 import highlight from "./images/highlight.png";
+// homestays itinerary
+import imageOne from "./images/imageOne.jpg";
+import imageTwo from "./images/imageTwo.jpg";
+import imageThree from "./images/imageThree.jpg";
+import imageFour from "./images/imageFour.jpg";
+import imageFive from "./images/imageFive.jpg";
 
+export const homestaysItineraryArray = [
+  {
+    id: 1,
+    imageOne: imageOne,
+    imageTwo: imageTwo,
+    imageThree: imageThree,
+    imageFour: imageFour,
+    imageFive: imageFive,
+    detailsOneHeading: "The Lali Buransh Homestay",
+    detailsOneBed: "2 Standard Double Bedroom",
+    detailsOneLocation: "Village Khurpatal, Nainital , 263001, Uttarakhand",
+    checkIn: "12:00 pm",
+    checkOut: "11:00 am",
+    moreDetails: "Food is allowed at an extra cost",
+    someMoreDetails: "Child under the age of 12 stays free if sharing the bed with parents. Extra mattress fee applies if required.",
+    specificationBed: "2 x Adult | 1 x Room",
+    price: "1500",
+  },
+]
 
 export const itinerary_elements = {
   i_m_banner,

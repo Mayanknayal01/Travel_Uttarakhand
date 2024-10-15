@@ -1,0 +1,122 @@
+/* first div */
+.firstItineraryHomestays {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+    margin: 4rem auto;
+    gap: 10px;
+}
+
+/* images divided in three div */
+.itsone, .itstwo, .itsthree {
+    width: 100%;
+    height: 100%;
+}
+.itsone img, .itstwo img, .itsthree img {
+    height: 100%;
+    width: 100%;
+}
+.itstwo, .itsthree {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+/* second section of homestays details */
+.homestaysDetails {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 80%;
+    margin: 2rem auto;
+    height: 20rem;
+    gap: 20px;
+}
+.detailsOne {
+    padding: 2rem;
+    background-color: rgb(218, 248, 253);
+    box-shadow: 2px 2px 5px ;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.5rem;
+}
+.detailsOneFirst h2 {
+    font-weight:bolder;
+}
+.detailsOneFirst p:nth-of-type(1) {
+    color: blue;
+}
+.detailsOneFirst p:nth-of-type(2) {
+    color: rgb(94, 93, 93);
+}
+.detailsOneSecond {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+.detailsOneSecondFirst {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.detailsOneCheckIn p {
+    background-color: white;
+    color: rgb(17, 222, 17);
+    width: 70%;
+    border-radius: 5px;
+}
+.detailsOneCheckOut p {
+    background-color: white;
+    color: rgb(250, 153, 16);
+    width: 70%;
+    border-radius: 5px;
+}
+.detailsSecond {
+    padding: 2rem;
+    background-color: rgb(218, 248, 253);
+    box-shadow: 2px 2px 5px ;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 0.5fr;
+}
+.detailsSecondOne {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+.detailsSecondOneFirst h5 {
+    font-weight: bold;
+}
+.detailsSecondOneFirst p {
+    color: blue;
+}
+.detailsSecondOneSecond h5 {
+    color: rgb(17, 222, 17);
+}
+.detailsSecondTwo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 1rem;
+}
+.detailsSecondThree {
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.detailsSecondThree button:nth-of-type(1) {
+    border-radius: 10px;
+    background-color: rgb(0, 162, 255);
+    transition: transform 0.3s ease;
+}
+.detailsSecondThree button:nth-of-type(2) {
+    border-radius: 10px;
+    background-color: orange;
+    transition: transform 0.3s ease;
+}
+.detailsSecondThree button:hover {
+    transform: scale(1.1);
+}
+
